@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
@@ -29,7 +30,17 @@ public class UserController {
 	/*
 	@Autowired
 	private UserRepository2 userRepository2;
-*/
+	 */
+	
+	
+	@RequestMapping(value = "/reactTest")
+    public ModelAndView reactTest() {
+        ModelAndView view = new ModelAndView("reactTest");
+        view.addObject("text", "world");
+        return view;
+    }
+	
+	
 	/**
 	 * http://localhost:8080/add?name=源��삎吏�&phone=01076041440
 	 * @param user
